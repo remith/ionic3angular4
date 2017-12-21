@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ItemDetails } from '../item-details/item-details';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-list',
@@ -30,8 +32,12 @@ export class ListPage {
 
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ListPage, {
+    this.navCtrl.push(ItemDetails, {
       item: item
     });
+  }
+
+  BackHome(){
+    this.navCtrl.setRoot(HomePage);
   }
 }

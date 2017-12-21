@@ -1,0 +1,74 @@
+<ion-header>
+  
+  <ion-navbar>
+    <ion-title>Item Details</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="BackHome()" color="#000" style="zoom:2.0;">
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<!-- <ion-content>
+
+  <div class="acharya-profile" text-left #profilePic [style.background-image]="'url(' + selectedItem.img + ')'">
+  </div>
+  <div *ngIf="selectedItem">
+    <h4><b>{{selectedItem.title}}</b></h4>
+  <h5 *ngIf="selectedItem">
+
+	<p>{{selectedItem.id}}</p>
+	<p>{{selectedItem.contact}}</p>
+  <p>{{selectedItem.email}}</p></h5>
+</div>
+	<button ion-button color="secondary" (click)="callNumber()"><h4> Call</h4></button>	
+	<button ion-button color="secondary" (click)="sendEmail()"><h4>Send mail</h4></button>
+</ion-content> -->
+<ion-content *ngIf="selectedItem">
+<ion-grid>
+  <ion-row>
+    <ion-col col-5>
+      <img src="http://www.chinmayamission.com/wp-content/themes/GCMW/images/{{selectedItem.image}}">
+    </ion-col>
+    <ion-col col-7>
+      <div >
+        <h4><b>{{selectedItem.title}}</b></h4>
+        <p>{{selectedItem.add1}}</p>
+        <p>{{selectedItem.add2}}</p>
+        <p>{{selectedItem.add3}}</p>
+        <p>{{selectedItem.city}} - {{selectedItem.zip}}</p>
+        <p>{{selectedItem.state}}, {{selectedItem.country}}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p><b>Phone: </b>{{selectedItem.phone}}</p>
+      <p><b>Email: </b>{{selectedItem.email}}</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <button ion-button color="danger" (click)="callNumber()"><b> Call</b></button> 
+      <button ion-button color="danger" (click)="sendEmail()"><b>E-Mail</b></button>
+      <button ion-button color="danger" (click)="sendMessage()"><b>Message</b></button>
+      <hr>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+    <b>About {{selectedItem.title}}</b>
+    <p>{{selectedItem.about1}}</p><br>
+    <p>{{selectedItem.about2}}</p><br>
+    <p>{{selectedItem.about3}}</p><br>
+    <p>{{selectedItem.about4}}</p><br>
+    <p>{{selectedItem.about5}}</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-footer>
